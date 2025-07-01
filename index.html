@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Jeu Concours Nawhal's - Memory Sauce Spicy Marbella&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-brown: #4A2C00;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-orange: #F39200;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-red: #D9232D;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-dark-bg: #41251A;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-white: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--nawhals-light-text: #F0F0F0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--font-main: 'Poppins', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Base &amp; Layout --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-family: var(--font-main);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background-color: var(--nawhals-dark-bg);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-light-text);</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Core layout: Center the game container in the viewport */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>min-height: 100vh; /* Fallback for older browsers */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>min-height: 100dvh; /* Use dynamic viewport height */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-sizing: border-box;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Shopify theme compatibility */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--buttons-border-width: 0px !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--buttons-border-opacity: 0 !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>--color-button-border: transparent !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.game-container {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: var(--nawhals-white);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>text-align: center;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Responsive sizing: take full available space but not more */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Removed max-height: 900px; to allow dynamic scaling */</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Flexbox structure to manage screens */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>overflow: hidden; /* Prevent internal overflow */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Screen Management --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.screen {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: center; /* Center content vertically */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>animation: fadeIn 0.5s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-grow: 1; /* Allow screen to fill the container */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>min-height: 0; /* Fix flexbox overflow issue */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>@keyframes fadeIn {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>from { opacity: 0; transform: translateY(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.screen.active {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Start Screen --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#start-screen { justify-content: center; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#start-screen .logo { max-width: 120px; margin-bottom: 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#start-screen h1 { font-family: var(--font-main); font-weight: 900; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--nawhals-brown); margin: 0 0 5px 0; line-height: 1.2; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#start-screen p { font-size: clamp(0.8rem, 2vw, 1rem); color: #555; margin-bottom: 20px; max-width: 400px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Registration Form --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.registration-form {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>max-width: 320px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.form-row { display: flex; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.form-row input { flex: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.registration-form input {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: 0.9em;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transition: border-color 0.3s, box-shadow 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.registration-form input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-color: var(--nawhals-orange);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 0 0 3px rgba(243, 146, 0, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.error-message {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-red);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: 0.8em;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-top: -5px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Game Screen --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#game-screen {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: flex-start; /* Align content to the top */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Adjusted padding to be more responsive and ensure chrono visibility */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: clamp(10px, 3vh, 25px) clamp(5px, 1.5vw, 15px) clamp(10px, 3vh, 15px) clamp(5px, 1.5vw, 15px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.game-header {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Adjusted margin-bottom to be more responsive */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-bottom: clamp(5px, 1.5vh, 15px);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: clamp(1rem, 3vw, 1.2rem);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-brown);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.game-header .chrono {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: var(--nawhals-light-text);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 5px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>min-width: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-brown);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: clamp(1.1rem, 3vw, 1.4rem);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-variant-numeric: tabular-nums; /* Added to prevent trembling */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- The Responsive Game Grid --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.game-grid {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>grid-template-columns: repeat(4, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>grid-template-rows: repeat(3, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>gap: clamp(5px, 1.5vmin, 10px); /* Responsive gap */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* Adjusted aspect ratio for 2:3 cards in a 4x3 grid */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>aspect-ratio: 8 / 9; /* (4 * 2) / (3 * 3) = 8 / 9 */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>max-height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin: auto; /* Center the grid within the remaining space */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Card Styling --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>perspective: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transition: transform 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card:hover { transform: scale(1.03); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-inner {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transform-style: preserve-3d;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: clamp(5px, 1.5vmin, 8px); /* Responsive radius */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: none; /* Removed the box-shadow */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card.flipped .card-inner { transform: rotateY(180deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-face {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>backface-visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: inherit; /* Inherit radius from parent */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-front {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: var(--nawhals-white);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: none; /* Removed the grey border */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transform: rotateY(180deg);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 0; /* Removed padding to save space */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-back {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>/* No background-image here, it's handled by the &lt;img&gt; tag inside */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: transparent; /* Removed the grey background */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-back img { /* New rule for the image inside card-back */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>object-fit: cover; /* Ensures the image covers the entire area */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: inherit; /* Inherit radius from parent */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card-front img {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%; /* Assure que l'image prend toute la largeur disponible */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: 100%; /* Assure que l'image prend toute la hauteur disponible */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>object-fit: contain; /* Maintient les proportions et s'assure que l'image est entièrement visible */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 5%; /* Ajoute un petit padding pour éviter que l'image ne touche les bords */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-sizing: border-box; /* Inclut le padding dans la largeur/hauteur */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card.matched {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transform: scale(0.98);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>opacity: 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card.matched .card-inner {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 0px 4px rgba(0,0,0,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- End Screen --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#end-screen h2 { font-weight: 900; font-size: clamp(1.4rem, 4vw, 1.8rem); color: var(--nawhals-brown); margin: 0 0 5px 0; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#end-screen .final-time { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--nawhals-orange); font-weight: 900; margin-bottom: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#end-screen #performance-message { font-size: clamp(0.8rem, 2vw, 1rem); color: #555; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#end-screen .button-group { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 300px; margin-top: 10px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Full Leaderboard Display --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.full-leaderboard-display {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>max-width: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: 1px solid #eee;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.full-leaderboard-display h3 { color: var(--nawhals-brown); margin-bottom: 8px; font-size: 1rem; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-entry {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-wrap: wrap; /* Allow items to wrap on smaller screens */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 5px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 1px 2px rgba(0,0,0,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-entry:last-child { margin-bottom: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-entry.top-3 { background: linear-gradient(45deg, #fff3cd, #ffeaa7); font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-rank { font-weight: bold; color: var(--nawhals-brown); min-width: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-name { flex: 1; text-align: left; margin-left: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-email {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>flex-basis: 100%; /* Take full width on new line */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>text-align: left;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: 0.75rem;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: #777;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-left: 30px; /* Align with name */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-top: 2px; /* Small space above email */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.leaderboard-time { font-weight: bold; color: var(--nawhals-orange); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Buttons --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section button.button,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section a.button {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding: 12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius: var(--rounded-button, 25px) !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: none !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>outline: none !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button:hover { transform: translateY(-2px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section #start-game-button {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: linear-gradient(45deg, var(--nawhals-orange), #ffc56e);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-white);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 4px 12px rgba(243, 146, 0, 0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section #start-game-button:hover { box-shadow: 0 6px 16px rgba(243, 146, 0, 0.3); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section #start-game-button:focus-visible { box-shadow: 0 0 0 2px var(--nawhals-white), 0 0 0 4px var(--nawhals-orange); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.primary {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: linear-gradient(45deg, var(--nawhals-red), #ff5560);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-white);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 4px 12px rgba(217, 35, 45, 0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.primary:hover { box-shadow: 0 6px 16px rgba(217, 35, 45, 0.3); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.primary:focus-visible { box-shadow: 0 0 0 2px var(--nawhals-white), 0 0 0 4px var(--nawhals-red); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.secondary {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background: var(--nawhals-white);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>color: var(--nawhals-red);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: 2px solid var(--nawhals-red) !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.secondary:hover { background: #fff8f8; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nawhals-game-section .button.secondary:focus-visible {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border: 2px solid var(--nawhals-red) !important;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>box-shadow: 0 0 0 2px var(--nawhals-white), 0 0 0 4px var(--nawhals-red);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* --- Mobile Adjustments --- */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>@media (max-width: 600px) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.nawhals-game-section { padding: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.game-container { border-radius: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.screen { padding: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.form-row { flex-direction: column; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.leaderboard-entry { flex-direction: column; align-items: flex-start; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.leaderboard-name, .leaderboard-email { margin-left: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.leaderboard-rank { margin-bottom: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.leaderboard-time { align-self: flex-end; margin-top: -20px; } /* Adjust position for time */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* Specific adjustments for very short screens (landscape mobile) */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>@media (max-height: 450px) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>#start-screen .logo { max-width: 80px; margin-bottom: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>#start-screen h1 { font-size: 1.2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>#start-screen p { display: none; } /* Hide paragraph on very short screens */</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.registration-form { gap: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.registration-form input { padding: 8px 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.nawhals-game-section .button { padding: 10px 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.game-header { margin-bottom: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="nawhals-game-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="game-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Start Screen avec formulaire d'inscription --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="start-screen" class="screen active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img src="https://cdn.shopify.com/s/files/1/0595/6013/2743/files/Nawhals_logo.png?v=1734697990" alt="Logo Nawhal's" class="logo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1&gt;Le Memory des Sauces&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Trouvez toutes les paires le plus rapidement possible et tentez de remporter le meilleur temps !&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;form class="registration-form" id="registration-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="form-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;input type="text" id="player-firstname" placeholder="Prénom" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;input type="text" id="player-lastname" placeholder="Nom" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="email" id="player-email" placeholder="votre.email@exemple.com" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div id="form-error-message" class="error-message" style="display: none;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button type="submit" id="start-game-button" class="button"&gt;Commencer le jeu&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Game Screen --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="game-screen" class="screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="game-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="chrono" id="chrono"&gt;00:00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="game-grid" id="game-grid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- End Screen --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="end-screen" class="screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 id="end-title"&gt;Félicitations !&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="final-time" id="final-time-display"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p id="performance-message"&gt;&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="button-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button id="replay-button" class="button secondary"&gt;Rejouer&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a href="#" target="_blank" class="button secondary" id="spicy-marbella-link"&gt;Découvrir la Spicy Marbella&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Conteneur pour le classement complet --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="full-leaderboard-display" class="full-leaderboard-display" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;🏆 Classement&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div id="leaderboard-list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cardImages = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'blanche', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/Blanche_carte.png?v=1751363316' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'andalouse', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/andalouse_carte.png?v=1751363300' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'miami', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/miami_carte.png?v=1751363290' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'spicy-marbella', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/spicy_marbella_carte.jpg?v=1751363277' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'brazil', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/brazil_carte.png?v=1751363266' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ name: 'pita-kebab', src: 'https://cdn.shopify.com/s/files/1/0595/6013/2743/files/pita_kebab_carte.png?v=1751363246' }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let cards = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let flippedCards = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let matchedPairs = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let startTime = null;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let chronoInterval = null;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let gameActive = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let playerData = {}; // Keep playerData to store user's name and email</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const startScreen = document.getElementById('start-screen');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const gameScreen = document.getElementById('game-screen');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const endScreen = document.getElementById('end-screen');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const registrationForm = document.getElementById('registration-form');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const gameGrid = document.getElementById('game-grid');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const chronoDisplay = document.getElementById('chrono');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const finalTimeDisplay = document.getElementById('final-time-display');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const performanceMessage = document.getElementById('performance-message');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const replayButton = document.getElementById('replay-button');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const spicyMarbellaLink = document.getElementById('spicy-marbella-link');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const endTitle = document.getElementById('end-title');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const fullLeaderboardDisplay = document.getElementById('full-leaderboard-display');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const leaderboardList = document.getElementById('leaderboard-list');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const formErrorMessage = document.getElementById('form-error-message');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// --- MODIFICATION CLÉ ICI : Récupérer la valeur du paramètre directement via Liquid ---</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const showFullLeaderboard = {{ section.settings.show_full_leaderboard | json }};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// --- FIN DE LA MODIFICATION CLÉ ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// --- Nouvelle logique pour afficher le classement directement si l'option est cochée ---</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (showFullLeaderboard) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>showScreen('end-screen'); // Afficher l'écran de fin immédiatement</p>
+<p class="p1"><span class="Apple-converted-space">          </span>fullLeaderboardDisplay.style.display = 'block'; // S'assurer que le conteneur du classement est visible</p>
+<p class="p1"><span class="Apple-converted-space">          </span>displayLeaderboard(); // Populer le classement (affichera toutes les entrées car showFullLeaderboard est vrai)</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Ajuster les éléments de l'écran de fin pour le mode "classement seulement"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>endTitle.textContent = '🏆 Classement Général';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>finalTimeDisplay.style.display = 'none'; // Cacher le temps final</p>
+<p class="p1"><span class="Apple-converted-space">          </span>performanceMessage.style.display = 'none'; // Cacher le message de performance</p>
+<p class="p1"><span class="Apple-converted-space">          </span>replayButton.style.display = 'none'; // Cacher le bouton Rejouer</p>
+<p class="p1"><span class="Apple-converted-space">          </span>spicyMarbellaLink.style.display = 'none'; // Cacher le lien produit</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Arrêter l'exécution du reste du script d'initialisation du jeu</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// --- Fin de la nouvelle logique ---</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function getLeaderboard() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const stored = localStorage.getItem('nawhals-memory-leaderboard');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return stored ? JSON.parse(stored) : [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function saveToLeaderboard(playerData, timeInSeconds) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const leaderboard = getLeaderboard();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const entry = {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>firstname: playerData.firstname,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>lastname: playerData.lastname,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>email: playerData.email,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>time: timeInSeconds,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>date: new Date().toISOString()</p>
+<p class="p1"><span class="Apple-converted-space">          </span>};</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>leaderboard.push(entry);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>leaderboard.sort((a, b) =&gt; a.time - b.time);</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (leaderboard.length &gt; 50) { // Limite à 50 entrées pour ne pas surcharger le localStorage</p>
+<p class="p1"><span class="Apple-converted-space">              </span>leaderboard.splice(50);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>localStorage.setItem('nawhals-memory-leaderboard', JSON.stringify(leaderboard));</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return leaderboard;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function displayLeaderboard() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const leaderboard = getLeaderboard();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>leaderboardList.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Afficher toutes les entrées si l'option est cochée, sinon seulement le top 10</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const entriesToDisplay = showFullLeaderboard ? leaderboard : leaderboard.slice(0, 10);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (entriesToDisplay.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>leaderboardList.innerHTML = '&lt;p style="text-align: center; color: #777; font-size: 0.9em;"&gt;Aucune entrée de classement pour le moment.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">              </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>entriesToDisplay.forEach((entry, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">              </span>div.className = `leaderboard-entry ${index &lt; 3 ? 'top-3' : ''}`;</p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>const rank = index + 1;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';</p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>div.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span class="leaderboard-rank"&gt;${medal} ${rank}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span class="leaderboard-name"&gt;${entry.firstname} ${entry.lastname.charAt(0)}.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span class="leaderboard-time"&gt;${formatTime(entry.time)}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span class="leaderboard-email"&gt;${entry.email}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>leaderboardList.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function formatTime(seconds) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const mins = Math.floor(seconds / 60);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const secs = Math.floor(seconds % 60);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Correctly calculate centiseconds (hundredths of a second)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const centisecs = Math.floor((seconds * 100) % 100);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${centisecs.toString().padStart(2, '0')}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function initializeGame() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>matchedPairs = 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flippedCards = [];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>gameActive = true;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>startTime = null;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>chronoDisplay.textContent = '00:00';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>gameGrid.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>const gameCardsData = [...cardImages, ...cardImages].map((card, index) =&gt; ({<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>...card,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>id: index,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>isFlipped: false,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>isMatched: false<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>}));</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards = shuffleArray(gameCardsData);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>renderCards();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function shuffleArray(array) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const newArray = [...array];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>for (let i = newArray.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">              </span>[newArray[i], newArray[j]] = [newArray[j], newArray[i]];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return newArray;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function renderCards() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cards.forEach(cardData =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const cardElement = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">              </span>cardElement.classList.add('card');</p>
+<p class="p1"><span class="Apple-converted-space">              </span>cardElement.dataset.id = cardData.id;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>cardElement.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div class="card-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div class="card-face card-back"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carte%20pleine%20-rBz2MaiSYs45rVH7hqQpJBjA9jkxWi.png" alt="Dos de la carte Nawhal's"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div class="card-face card-front"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>&lt;img src="${cardData.src}" alt="Sauce ${cardData.name}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>cardElement.addEventListener('click', () =&gt; flipCard(cardElement, cardData));</p>
+<p class="p1"><span class="Apple-converted-space">              </span>gameGrid.appendChild(cardElement);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function flipCard(cardElement, cardData) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!gameActive || cardData.isFlipped || cardData.isMatched || flippedCards.length &gt;= 2) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!startTime) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>startChrono();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardData.isFlipped = true;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardElement.classList.add('flipped');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>flippedCards.push({ element: cardElement, data: cardData });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (flippedCards.length === 2) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>checkForMatch();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function checkForMatch() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const [card1, card2] = flippedCards;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (card1.data.name === card2.data.name) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card1.data.isMatched = true;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card2.data.isMatched = true;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card1.element.classList.add('matched');</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card2.element.classList.add('matched');</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>matchedPairs++;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>flippedCards = [];</p>
+<p class="p2"><span class="Apple-converted-space">                  </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>if (matchedPairs === cards.length / 2) {</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>endGame();</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}, 300);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card1.data.isFlipped = false;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card2.data.isFlipped = false;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card1.element.classList.remove('flipped');</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>card2.element.classList.remove('flipped');</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>flippedCards = [];</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}, 1200);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function startChrono() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>startTime = Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>chronoInterval = setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>const elapsed = (Date.now() - startTime) / 1000;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>chronoDisplay.textContent = formatTime(elapsed);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}, 10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function endGame() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>gameActive = false;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (chronoInterval) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>clearInterval(chronoInterval);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const finalTime = (Date.now() - startTime) / 1000;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>showScreen('end-screen');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>finalTimeDisplay.textContent = formatTime(finalTime);</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>const leaderboard = saveToLeaderboard(playerData, finalTime);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const playerRank = leaderboard.findIndex(entry =&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>entry.email === playerData.email &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>Math.abs(entry.time - finalTime) &lt; 0.01</p>
+<p class="p1"><span class="Apple-converted-space">          </span>) + 1;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>let message = `Votre temps : ${formatTime(finalTime)}`;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (playerRank &lt;= 3) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>message += ` - Vous êtes dans le top 3 ! 🏆`;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else if (playerRank &lt;= 10) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>message += ` - Vous êtes dans le top 10 ! 🎉`;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>performanceMessage.textContent = message;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>updateLeaderboardDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function updateLeaderboardDisplay() {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Afficher le conteneur du classement complet si l'option est cochée dans Shopify</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Sinon, le cacher (car le jeu est terminé et on ne veut pas de classement partiel)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (showFullLeaderboard) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>fullLeaderboardDisplay.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">              </span>displayLeaderboard(); // Affichera toutes les entrées</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>fullLeaderboardDisplay.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function showScreen(screenId) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.querySelectorAll('.game-container .screen').forEach(screen =&gt; screen.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">          </span>document.getElementById(screenId).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>registrationForm.addEventListener('submit', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>event.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>playerData = {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>firstname: document.getElementById('player-firstname').value,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>lastname: document.getElementById('player-lastname').value,</p>
+<p class="p1"><span class="Apple-converted-space">              </span>email: document.getElementById('player-email').value</p>
+<p class="p1"><span class="Apple-converted-space">          </span>};</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>showScreen('game-screen');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>initializeGame();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>replayButton.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>startTime = null;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (chronoInterval) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>clearInterval(chronoInterval);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>chronoInterval = null;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>showScreen('game-screen');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>initializeGame();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Initialisation du lien Spicy Marbella</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// La variable sectionSettings n'est plus utilisée directement pour showFullLeaderboard,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// mais elle est toujours nécessaire pour spicy_marbella_product_url</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const gameSectionElement = document.querySelector('.nawhals-game-section');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (gameSectionElement) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const currentSectionSettings = JSON.parse(gameSectionElement.dataset.settings || '{}');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (currentSectionSettings.spicy_marbella_product_url) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>spicyMarbellaLink.href = currentSectionSettings.spicy_marbella_product_url;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">{% schema %}</p>
+<p class="p1">{</p>
+<p class="p1">"name": "Jeu Memory Nawhal's",</p>
+<p class="p1">"class": "nawhals-game-section",</p>
+<p class="p1">"settings": [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"type": "header",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"content": "Paramètres du jeu Memory"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"type": "url",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"id": "spicy_marbella_product_url",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"label": "Lien page produit Spicy Marbella"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"type": "checkbox",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"id": "show_full_leaderboard",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"label": "Afficher le classement complet directement",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"default": false,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"info": "Cochez pour afficher toutes les entrées du classement au chargement de la page, sans jouer au jeu."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">]</p>
+<p class="p1">}</p>
+<p class="p1">{% endschema %}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
